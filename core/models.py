@@ -18,3 +18,6 @@ class Point(models.Model):
     day_of_week = models.CharField(max_length=30)
     #entrance
     #left
+
+    def __str__(self):
+        return self.employee, self.day_of_week, self.date
