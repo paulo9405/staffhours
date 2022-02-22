@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Employee, Point
+from .models import Employee, Point, DayOfWeek
 
 
 class PointAdmin(admin.ModelAdmin):
@@ -12,4 +12,5 @@ class PointAdmin(admin.ModelAdmin):
 
 admin.site.register(Employee)
 admin.site.register(Point, PointAdmin)
+admin.site.register(DayOfWeek)
 

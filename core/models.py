@@ -7,17 +7,23 @@ class Employee(models.Model):
     phone = models.CharField(max_length=20)
     position = models.CharField(max_length=100)
 
-
     def __str__(self):
         return self.name
 
 
+class DayOfWeek(models.Model):
+    day_of_week = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.day_of_week
+
 class Point(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField()
-    day_of_week = models.CharField(max_length=30)
+    day_of_week = models.ForeignKey(DayOfWeek, on_delete=models.CASCADE, null=True)
+
     #entrance
     #left
-
     def __str__(self):
-        return self.employee, self.day_of_week, self.date
+        return self.employee, self.date, self.day_of_week
+
