@@ -3,11 +3,13 @@ from .models import Employee, Point, DayOfWeek
 
 
 class PointAdmin(admin.ModelAdmin):
-    list_display = (
+    list_display = [
         'employee',
         'day_of_week',
         'date',
-    )
+        'entrance',
+        'left',
+    ]
 
 
 admin.site.register(Employee)

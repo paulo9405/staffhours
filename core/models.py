@@ -17,13 +17,13 @@ class DayOfWeek(models.Model):
     def __str__(self):
         return self.day_of_week
 
+
 class Point(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField()
     day_of_week = models.ForeignKey(DayOfWeek, on_delete=models.CASCADE, null=True)
-
-    #entrance
-    #left
-    def __str__(self):
-        return self.employee, self.date, self.day_of_week
+    entrance = models.TimeField(auto_now=False, null=True)
+    left = models.TimeField(auto_now=False, null=True)
+    # def __str__(self):
+    #     return self.employee, self.day_of_week, self.date, self.entrance
 
